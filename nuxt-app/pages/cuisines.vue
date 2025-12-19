@@ -189,7 +189,12 @@ import Button from '~/components/ui/Button.vue'
   gap: 18px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
+
+  padding-bottom: 12px;
+  margin-bottom: 40px; /* ✅ ESPACE AVANT LE BOUTON */
 }
+
+
 
 .real-card {
   min-width: 240px;

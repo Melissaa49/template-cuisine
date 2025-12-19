@@ -1,5 +1,5 @@
 <template>
-  <!-- HERO CONTACT -->
+  <!-- HERO -->
   <section class="hero">
     <div class="hero-overlay">
       <h1>
@@ -16,33 +16,33 @@
 
   <!-- FORMULAIRE -->
   <section class="section form-section">
-    <h2 class="section-title">
-      Votre projet
-    </h2>
+    <h2 class="section-title">Votre projet</h2>
 
     <p class="section-subtitle">
       Remplissez ce formulaire, nous vous recontacterons rapidement.
     </p>
 
-    <form class="contact-form">
-      <input type="text" placeholder="Nom & Prénom" />
-      <input type="email" placeholder="Adresse email" />
-      <input type="tel" placeholder="Téléphone" />
+    <div class="form-wrapper">
+      <form class="contact-form">
+        <input type="text" placeholder="Nom & Prénom" />
+        <input type="email" placeholder="Adresse email" />
+        <input type="tel" placeholder="Téléphone" />
+<select>
+  <option value="" disabled selected>Type de projet</option>
+  <option>Cuisine sur-mesure</option>
+  <option>Dressing / Rangements</option>
+  <option>Autre projet</option>
+</select>
 
-      <select>
-        <option>Type de projet</option>
-        <option>Cuisine sur-mesure</option>
-        <option>Dressing / Rangements</option>
-        <option>Autre projet</option>
-      </select>
 
-      <textarea
-        rows="4"
-        placeholder="Décrivez votre projet (dimensions, attentes, style...)"
-      />
+        <textarea
+          rows="4"
+          placeholder="Décrivez votre projet (dimensions, attentes, style...)"
+        />
 
-      <Button>Envoyer ma demande</Button>
-    </form>
+        <Button>Envoyer ma demande</Button>
+      </form>
+    </div>
   </section>
 
   <!-- MAP + INFOS -->
@@ -64,8 +64,8 @@
       </p>
 
       <p>
-        📞 01 23 45 67 89<br />
-        ✉️ contact@nomentreprise.fr
+        01 23 45 67 89<br />
+        contact@nomentreprise.fr
       </p>
     </div>
   </section>
@@ -95,11 +95,12 @@ import Button from '~/components/ui/Button.vue'
 .hero {
   height: 42vh;
   min-height: 300px;
-  background: linear-gradient(
-    to bottom,
-    rgba(0,0,0,0.08),
-    rgba(0,0,0,0.02)
-  );
+  background:
+    radial-gradient(
+      circle at top,
+      rgba(255,255,255,0.9),
+      rgba(245,240,235,0.95)
+    );
 }
 
 .hero-overlay {
@@ -114,6 +115,7 @@ import Button from '~/components/ui/Button.vue'
 .hero h1 {
   font-size: 32px;
   font-weight: 400;
+  color: #5a4a3b;
 }
 
 .hero span {
@@ -129,7 +131,7 @@ import Button from '~/components/ui/Button.vue'
   line-height: 1.6;
 }
 
-/* ===== SECTIONS ===== */
+/* ===== STRUCTURE ===== */
 .section {
   padding: 72px 24px;
   text-align: center;
@@ -149,21 +151,40 @@ import Button from '~/components/ui/Button.vue'
   line-height: 1.6;
 }
 
-/* ===== FORM ===== */
-.form-section {
-  background: transparent;
+/* ===== FORMULAIRE ===== */
+.form-wrapper {
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(4px);
+  border-radius: 28px;
+  padding: 36px 28px;
+  box-shadow: 0 24px 48px rgba(0,0,0,0.06);
+  max-width: 420px;
+  margin: 0 auto;
 }
 
 .contact-form {
   display: grid;
-  gap: 16px;
-  max-width: 360px;
-  margin: 0 auto;
+  gap: 18px;
+}
+.contact-form select {
+  color: #9b8a75; /* couleur "placeholder" */
+}
+
+/* Quand une vraie option est choisie */
+.contact-form select:valid {
+  color: #5a4a3b;
+}
+
+/* Focus (tap / clic) */
+.contact-form select:focus {
+  border-color: rgba(184, 146, 90, 0.6);
+  box-shadow: 0 0 0 3px rgba(184, 146, 90, 0.18);
+  outline: none;
 }
 
 .contact-form input,
-.contact-form select,
-.contact-form textarea {
+.contact-form textarea,
+.contact-form select {
   width: 100%;
   padding: 14px 16px;
   border-radius: 14px;
@@ -171,37 +192,36 @@ import Button from '~/components/ui/Button.vue'
   font-size: 14px;
   font-family: inherit;
   background: white;
+  color: #5a4a3b;
 }
 
 .contact-form textarea {
   resize: none;
 }
+
+/* SELECT élégant (pas bleu) */
 .contact-form select {
   appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-
-  color: #5a4a3b;
-  background-color: #fff;
-
   background-image: url("data:image/svg+xml;utf8,<svg fill='%235a4a3b' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
   background-repeat: no-repeat;
   background-position: right 14px center;
   background-size: 16px;
-
   padding-right: 44px;
+}
+
+.contact-form button {
+  margin-top: 12px;
 }
 
 /* ===== MAP ===== */
 .map-section {
-  background: transparent;
-  padding-top: 0;
+  padding-top: 48px;
 }
 
 .map-wrapper {
-  border-radius: 24px;
+  border-radius: 28px;
   overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  box-shadow: 0 28px 56px rgba(0,0,0,0.1);
   margin-bottom: 32px;
 }
 
@@ -215,6 +235,7 @@ import Button from '~/components/ui/Button.vue'
   font-size: 18px;
   font-weight: 400;
   margin-bottom: 12px;
+  color: #5a4a3b;
 }
 
 .infos p {
@@ -225,6 +246,11 @@ import Button from '~/components/ui/Button.vue'
 
 /* ===== CTA ===== */
 .cta-section {
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.6),
+    rgba(245,240,235,0.9)
+  );
   padding-bottom: 96px;
 }
 
@@ -244,5 +270,10 @@ import Button from '~/components/ui/Button.vue'
   max-width: 320px;
   margin: 16px auto 32px;
   line-height: 1.6;
+}
+@media (hover: hover) {
+  .contact-form select:hover {
+    border-color: rgba(184, 146, 90, 0.4);
+  }
 }
 </style>
