@@ -1,0 +1,53 @@
+:root {
+  --bg: #f7f4f1;
+  --bg-soft: #fdfcfa;
+  --text: #2b2b2b;
+  --muted: #7a7a7a;
+
+  --gold: #c9a46a;
+  --gold-soft: #e6d3b0;
+
+  --radius: 16px;
+  --container: 1200px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+
+  background-image: url('/images/marble-bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  color: #4a3b2f;
+}
+
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section {
+  padding: 64px 0;
+}
+
+.bg-soft {
+  background: var(--bg-soft);
+}
+
+button {
+  font-family: 'Playfair Display', serif;
+}
