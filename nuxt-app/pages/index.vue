@@ -59,25 +59,27 @@
     de la conception jusqu’à l’installation.
   </p>
 
-  <div class="services-grid">
-    <div class="service">
-      <img src="/images/icone-cuisine.png" alt="" />
-      <span>Conception personnalisée</span>
-    </div>
-
-    <div class="service">
-      <img src="/images/icone-cuisine2.png" alt="" />
-      <span>Fabrication sur-mesure</span>
-    </div>
-
-    <div class="service">
-      <img src="/images/icone-cuisine3.png" alt="" />
-      <span>Installation clé en main</span>
-    </div>
+<div class="services-grid">
+  <div class="service">
+    <i class="fa-solid fa-pencil-ruler"></i>
+    <span>Conception personnalisée</span>
   </div>
+
+  <div class="service">
+    <i class="fa-solid fa-layer-group"></i>
+    <span>Fabrication sur-mesure</span>
+  </div>
+
+  <div class="service">
+    <i class="fa-solid fa-screwdriver-wrench"></i>
+    <span>Installation clé en main</span>
+  </div>
+</div>
+
 
   <Button class="cta">Demander un devis</Button>
 </section>
+
 <!-- AVIS CLIENTS -->
 <section class="section testimonials-section">
   <h2 class="testimonials-title">
@@ -231,27 +233,27 @@ import SectionTitle from '~/components/ui/SectionTitle.vue'
   margin-bottom: 48px;
 }
 
-
 .service {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
 }
 
-.service img {
-  width: 56px;
-  height: 56px;
-  filter: drop-shadow(0 6px 12px rgba(180, 150, 100, 0.25));
+.service i {
+  font-size: 22px;
+  color: #6d5c4b;
+  background: rgba(184, 146, 90, 0.12);
+  padding: 16px;
+  border-radius: 50%;
 }
-
 
 .service span {
   font-size: 14px;
   color: #6d5c4b;
-  max-width: 90px;
-  text-align: center;
   line-height: 1.4;
+  text-align: center;
+  max-width: 110px;
 }
 
 
@@ -265,6 +267,7 @@ import SectionTitle from '~/components/ui/SectionTitle.vue'
   backdrop-filter: blur(2px);
   padding: 96px 24px;
   text-align: center;
+  padding-top: 1px;
 }
 
 /* TITRE */
@@ -281,41 +284,38 @@ import SectionTitle from '~/components/ui/SectionTitle.vue'
   font-weight: 300;
   color: #7b6a58;
 }
+/* ===== AVIS CLIENTS – MOBILE FIRST ===== */
 
-/* CAROUSEL */
 .testimonials-carousel {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: 85%;
-  gap: 24px;
+  display: flex;
+  gap: 16px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  padding-bottom: 12px;
+  padding-bottom: 16px;
 }
 
 .testimonials-carousel::-webkit-scrollbar {
   display: none;
 }
 
-/* CARTE AVIS */
 .testimonial-card {
+  min-width: 88%;
+  max-width: 88%;
+  scroll-snap-align: center;
+
   background: linear-gradient(
     180deg,
-    rgba(255, 255, 255, 0.95),
-    rgba(250, 248, 246, 0.95)
+    rgba(255, 255, 255, 0.96),
+    rgba(248, 246, 244, 0.96)
   );
 
-  border-radius: 28px;
-  padding: 38px 30px;
+  border-radius: 26px;
+  padding: 28px 22px;
 
   border: 1px solid rgba(210, 190, 160, 0.35);
 
   box-shadow:
-    0 20px 40px rgba(0, 0, 0, 0.06),
-    0 2px 6px rgba(0, 0, 0, 0.03);
-
-  scroll-snap-align: center;
-  transition: transform 0.25s ease;
+    0 16px 36px rgba(0, 0, 0, 0.08);
 }
 
 
@@ -347,21 +347,28 @@ import SectionTitle from '~/components/ui/SectionTitle.vue'
 /* AUTEUR */
 .author {
   font-size: 13px;
-  color: #9b8a75;
-  letter-spacing: 0.3px;
+  font-weight: 400;
 }
+
 
 /* ===== RESPONSIVE ===== */
 
 @media (min-width: 768px) {
   .testimonials-carousel {
-    grid-auto-columns: 45%;
+    gap: 24px;
+  }
+
+  .testimonial-card {
+    min-width: 46%;
+    max-width: 46%;
+    padding: 36px 30px;
   }
 }
 
 @media (min-width: 1024px) {
-  .testimonials-carousel {
-    grid-auto-columns: 30%;
+   .testimonial-card {
+    min-width: 30%;
+    max-width: 30%;
   }
 }
 

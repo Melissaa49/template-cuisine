@@ -1,5 +1,5 @@
 <template>
-  <!-- HERO DRESSINGS -->
+  <!-- HERO -->
   <section class="hero">
     <img src="/images/dressing.png" class="hero-img" />
 
@@ -31,17 +31,17 @@
 
     <div class="services-grid">
       <div class="service">
-        <img src="/images/icone-cuisine.png" alt="" />
+        <i class="fa-solid fa-pencil-ruler"></i>
         <span>Conception personnalisée</span>
       </div>
 
       <div class="service">
-        <img src="/images/icone-cuisine2.png" alt="" />
+        <i class="fa-solid fa-layer-group"></i>
         <span>Fabrication sur-mesure</span>
       </div>
 
       <div class="service">
-        <img src="/images/icone-cuisine3.png" alt="" />
+        <i class="fa-solid fa-screwdriver-wrench"></i>
         <span>Installation clé en main</span>
       </div>
     </div>
@@ -80,7 +80,7 @@
     </Button>
   </section>
 
-  <!-- CTA FINAL -->
+  <!-- CTA -->
   <section class="section cta-section">
     <h2>
       Un projet de dressing<br />
@@ -88,9 +88,8 @@
     </h2>
 
     <p>
-      Contactez-nous pour un devis gratuit et
-      concevons ensemble un rangement
-      parfaitement adapté à votre intérieur.
+      Contactez-nous pour un devis gratuit et concevons ensemble
+      un rangement parfaitement adapté à votre intérieur.
     </p>
 
     <Button>Demander un devis</Button>
@@ -169,7 +168,7 @@ import Button from '~/components/ui/Button.vue'
   line-height: 1.6;
 }
 
-/* ===== SERVICES ===== */
+/* ===== SERVICES (IDENTIQUE INDEX) ===== */
 .services {
   background: transparent;
 }
@@ -180,17 +179,27 @@ import Button from '~/components/ui/Button.vue'
   gap: 32px;
 }
 
-.service img {
-  width: 56px;
-  height: 56px;
-  margin-bottom: 12px;
-  filter: drop-shadow(0 6px 12px rgba(180,150,100,0.25));
+.service {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.service i {
+  font-size: 22px;
+  color: #6d5c4b;
+  background: rgba(184, 146, 90, 0.12);
+  padding: 16px;
+  border-radius: 50%;
 }
 
 .service span {
   font-size: 14px;
   color: #6d5c4b;
   line-height: 1.4;
+  text-align: center;
+  max-width: 110px;
 }
 
 /* ===== REALISATIONS ===== */

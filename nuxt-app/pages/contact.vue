@@ -176,6 +176,21 @@ import Button from '~/components/ui/Button.vue'
 .contact-form textarea {
   resize: none;
 }
+.contact-form select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  color: #5a4a3b;
+  background-color: #fff;
+
+  background-image: url("data:image/svg+xml;utf8,<svg fill='%235a4a3b' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 16px;
+
+  padding-right: 44px;
+}
 
 /* ===== MAP ===== */
 .map-section {
